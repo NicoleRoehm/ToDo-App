@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/detail_materialtoolbar"
+            android:layout_width="413dp"
+            android:layout_height="60dp"
+            android:background="#CBBAABE3"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="?attr/actionModeCloseDrawable"
+            app:navigationIconTint="#077572"
+            app:title="Lebensmittel"
+            app:titleCentered="true"
+            app:titleTextColor="#0A734E" />
+
+        <ImageButton
+            android:id="@+id/detail_send_button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="#23C5AD"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@android:drawable/ic_menu_send"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/detail_recycler_view"
+            android:layout_width="412dp"
+            android:layout_height="595dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/detail_input_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detail_materialtoolbar"
+            app:reverseLayout="true"
+            tools:itemCount="3"
+            tools:listitem="@layout/todo_item">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/detail_input_text"
+            android:layout_width="310dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="4dp"
+            android:textColorHint="#EFE2E2"
+            app:boxBackgroundColor="#F6EAEA"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="#DA6FE6"
+            app:endIconTint="#35B698"
+            app:hintTextColor="#12307E"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/detail_send_button2"
+            app:startIconTint="#CC83E6">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/detail_input_layout_text"
+                android:layout_width="309dp"
+                android:layout_height="54dp"
+                android:backgroundTint="#FFFFFF"
+                android:hint="write you´re ToDo here" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
